@@ -2,11 +2,11 @@ from typing import List
 from uuid import UUID
 from app.models.user_model import User
 from app.models.todo_model import Todo
-from app.schemas.todo_schema import TodoCreate, TodoUpdate
+from app.schemas.todo_schema import TodoCreate, TodoOut, TodoUpdate
 
 class TodoService:
     @staticmethod
-    async def list_todos(user: User) -> List[Todo]:
+    async def list_todos(user: User) -> List[TodoOut]:
         todos = await Todo.find(Todo.owner.id == user.id).to_list()
         return todos
     
