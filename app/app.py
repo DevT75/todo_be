@@ -8,6 +8,8 @@ from app.core.config import settings
 from app.models.todo_model import Todo
 from app.models.user_model import User
 
+origins = ["https://todo-frontend-eta-ten.vercel.app"]
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
@@ -15,7 +17,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.BACKEND_CORS_ORIGINS,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
