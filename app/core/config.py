@@ -2,6 +2,7 @@ from typing import List
 
 from decouple import config
 from pydantic import AnyHttpUrl, BaseSettings
+# from pydantic-settings import BaseSettings
 
 
 class Settings(BaseSettings):
