@@ -8,7 +8,7 @@ from app.core.config import settings
 from app.models.todo_model import Todo
 from app.models.user_model import User
 
-origins = ["https://todo-frontend-eta-ten.vercel.app"]
+origins = ["*"]
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
