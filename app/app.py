@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
+@app.get("/api/python")
 async def root():
     return {"message": "Hello World, Successfully Deployed!!!"}
 
@@ -32,9 +32,9 @@ async def app_init():
     """
         initialize crucial application services
     """
-    
+
     db_client = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING).Todo
-    
+
     await init_beanie(
         database=db_client,
         document_models= [
@@ -42,5 +42,5 @@ async def app_init():
             Todo
         ]
     )
-    
+
 app.include_router(router, prefix=settings.API_V1_STR)
