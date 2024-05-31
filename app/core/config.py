@@ -15,12 +15,10 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
         "https://todo-frontend-eta-ten.vercel.app"
     ]
-    PROJECT_NAME: str = "FODOIST"
-    
+    PROJECT_NAME: str = "TODO"
     # Database
     MONGO_CONNECTION_STRING: str = config("MONGO_CONNECTION_STRING", cast=str)
-    
     class Config:
         case_sensitive = True
-        
+
 settings = Settings()
